@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Asus
- * Date: 8/3/2020
- * Time: 11:26 PM
- */
 
 namespace App\Repositories\Interfaces;
 

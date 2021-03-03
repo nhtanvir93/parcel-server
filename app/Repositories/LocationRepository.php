@@ -11,10 +11,14 @@ class LocationRepository extends BaseRepository implements LocationRepositoryInt
         parent::__construct($model);
     }
 
-    public function getAllMatches($location) {
+    public function getAllMatches($location, $exceptLongitude, $exceptLatitude) {
         return $this->model
             ->select('id', 'name', 'longitude', 'latitude')
-            ->where('name', 'like', $location . '%')
+            ->where([
+                ['name', 'like', $location . '%'],
+                ['longitude', '!=', $exceptLongitude],
+                ['latitude', '!=', $exceptLatitude]
+            ])
             ->get();
     }
 }

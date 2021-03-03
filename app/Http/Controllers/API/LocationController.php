@@ -36,7 +36,7 @@ class LocationController extends Controller
     }
 
     public function getAllMatches ($location) {
-        $locations = $this->locationRepository->getAllMatches($location);
+        $locations = $this->locationRepository->getAllMatches($location, request()->query('except_longitude'), request()->query('except_latitude'));
 
         return response()->json([
             'success' => $locations->count() == 0 ? false : true,

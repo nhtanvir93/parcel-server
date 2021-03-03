@@ -6,7 +6,7 @@
 
 # create schema "parcel"
 
-# migrate tabled
+# migrate tables
 php artisan migrate
 
 # serve at localhost:8000
